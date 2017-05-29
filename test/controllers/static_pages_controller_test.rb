@@ -6,14 +6,14 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     @base_title = "Ruby on Rails Tutorial Sample App"
   end
   
-  #excercise 3.42
-   test "should get root" do
-    get root_url 
-    assert_response :success
-  end
+  # excercise 3.42
+  # test "should get root" do
+  #   get root_url 
+  #   assert_response :success
+  # end
   
-   #excercise 3.42 alternate answer
-   test "should get root" do
+  #excercise 3.42 alternate answer
+  test "should get root" do
     get '/' 
     assert_response :success
   end
@@ -36,10 +36,12 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     assert_select "title", "About | #{@base_title}"
   end
   
-    test "should get contact" do
-    get static_pages_about_url
+  test "should get contact" do
+    get static_pages_contact_url
     assert_response :success
     assert_select "title", "Contact | #{@base_title}"
   end
+  
+ 
 
 end
